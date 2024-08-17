@@ -1,22 +1,70 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
 body {
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+
 }
 
 
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    border: 5px solid black;
+}
+
+
+
+.title,
+.books {
+    text-align: center;
+
+}
+
+.books {
+    border: 2px solid black;
+    height: 8em;
+    gap: 1em;
 }
 
 .book-container {
-    border: 2px solid;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 30%;
+    justify-content: center;
+    border: 2px solid;
 }
 
+.big-book-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.newBook {
+    margin: auto;
+    border: 2px solid black;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
 .title {
-    text-align: center;
+    flex-grow: 2;
 }
