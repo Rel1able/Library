@@ -12,6 +12,22 @@ function Book(name, author, pages, read) {
     this.read = read;
 }
 
+
+
+function removeBook(arr, book) {
+    let index = arr.indexOf(book);
+    if (index > -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+
+function readTheBook(arr, book) {
+    let index = arr.indexOf(book);
+
+}
+
+
 function showTheBook(arr) {
     const bookContainer = document.querySelector(".book-container");
     bookContainer.innerHTML = "";
@@ -40,6 +56,32 @@ function showTheBook(arr) {
         bookRead.classList.add("book-read");
         bookRead.textContent = arr[i].read ? "read" : "not read yet";
         books.appendChild(bookRead);
+
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "remove the book";
+
+        removeButton.addEventListener("click", () => {
+            removeBook(myLibrary, arr[i]);
+            showTheBook(myLibrary);
+        });
+
+
+        books.appendChild(removeButton);
+
+
+        let readButton = document.createElement("button");
+        readButton.textContent = "read";
+
+        readButton.addEventListener("click", () => {
+            if (bookRead.textContent === "read") {
+                bookRead.textContent = "not read yet";
+            } else if (bookRead.textContent === "not read yet") {
+                bookRead.textContent = "read";
+            }
+        })
+
+        books.appendChild(readButton);
     }
 }
 
