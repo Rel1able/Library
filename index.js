@@ -41,21 +41,24 @@ function showTheBook(arr) {
     bookContainer.innerHTML = "";
     for (let i = 0; i < arr.length; i++) {
 
+        const books = document.createElement("div");
+        books.classList.add("books");
+        bookContainer.appendChild(books);
 
         const bookName = document.createElement("div");
         bookName.classList.add("book-name");
         bookName.textContent = `Name: ${arr[i].name}`;
-        bookContainer.appendChild(bookName);
+        books.appendChild(bookName);
 
         const bookAuthor = document.createElement("div");
         bookAuthor.classList.add("book-author");
         bookAuthor.textContent = `Author: ${arr[i].author}`;
-        bookContainer.appendChild(bookAuthor);
+        books.appendChild(bookAuthor);
 
         const bookPages = document.createElement("div");
         bookPages.classList.add("book-pages");
         bookPages.textContent = `Pages: ${arr[i].pages}`;
-        bookContainer.appendChild(bookPages);
+        books.appendChild(bookPages);
     }
 }
 

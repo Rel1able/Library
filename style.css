@@ -13,4 +13,7 @@ body {
 
 .book-container {
     border: 2px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
 }
