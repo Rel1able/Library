@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <button onclick="showCard()">Add the book</button>
+    <button onclick="showCard()">+ New Book</button>
     <form id="add-book" style="display: none;">
         <div class="container">
             <label for="name">Enter the book name</label>
@@ -18,6 +18,8 @@
             <input id="author" type="text" required>
             <label for="pages">Enter the number of pages</label>
             <input id="pages" type="number">
+            <label for="read">read</label>
+            <input type="checkbox" id="read">
             <button class="btn-add" type="button" required>Add the book</button>
         </div>
 
