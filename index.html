@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="made-by"><a href="https://github.com/Rel1able">Made by Rel1able</a></div>
-        <h1 class="title">Library Project</h1>
+        <h1 class="title">Library</h1>
         <button class="newBook" onclick="showCard()">+ New Book</button>
     </div>
 
@@ -28,12 +28,12 @@
     <form id="add-book" style="display: none;">
         <div class="container">
             <label for="name">Enter the book name</label>
-            <input id="name" type="text" required>
+            <input id="name" type="text" placeholder="The Adventures of Sherlock Holmes">
             <label for="author">Enter the Author</label>
-            <input id="author" type="text" required>
+            <input id="author" type="text" placeholder="Arthur Conan Doyle">
             <label for="pages">Enter the number of pages</label>
-            <input id="pages" type="number">
-            <div>
+            <input id="pages" type="number" placeholder="307">
+            <div class="check-read">
                 <label for="read">read</label>
                 <input type="checkbox" id="read">
             </div>

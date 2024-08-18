@@ -1,7 +1,7 @@
 const myLibrary = [{
-    name: "peter",
-    author: "lo querdo",
-    pages: 222,
+    name: "The Adventures of Sherlock Holmes",
+    author: "Arthur Conan Doyle",
+    pages: 307,
     read: true
 }];
 
@@ -39,24 +39,23 @@ function showTheBook(arr) {
 
         const bookName = document.createElement("div");
         bookName.classList.add("book-name");
-        bookName.textContent = `Name: ${arr[i].name}`;
+        bookName.innerHTML = `<strong>Name:</strong> ${arr[i].name}`;
         books.appendChild(bookName);
 
         const bookAuthor = document.createElement("div");
         bookAuthor.classList.add("book-author");
-        bookAuthor.textContent = `Author: ${arr[i].author}`;
+        bookAuthor.innerHTML = `<strong>Author:</strong> ${arr[i].author}`;
         books.appendChild(bookAuthor);
 
         const bookPages = document.createElement("div");
         bookPages.classList.add("book-pages");
-        bookPages.textContent = `Pages: ${arr[i].pages}`;
+        bookPages.innerHTML = `<strong>Pages:</strong> ${arr[i].pages}`;
         books.appendChild(bookPages);
 
         const bookRead = document.createElement("div");
         bookRead.classList.add("book-read");
         bookRead.textContent = arr[i].read ? "read" : "not read yet";
         books.appendChild(bookRead);
-
 
         const buttonContainer = document.createElement("div");
         buttonContainer.classList.add("button-container");
