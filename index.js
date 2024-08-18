@@ -58,8 +58,13 @@ function showTheBook(arr) {
         books.appendChild(bookRead);
 
 
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("button-container");
+        books.appendChild(buttonContainer);
+
         let removeButton = document.createElement("button");
-        removeButton.textContent = "remove the book";
+        removeButton.classList.add("remove-button");
+        removeButton.textContent = "remove";
 
         removeButton.addEventListener("click", () => {
             removeBook(myLibrary, arr[i]);
@@ -67,10 +72,11 @@ function showTheBook(arr) {
         });
 
 
-        books.appendChild(removeButton);
+        buttonContainer.appendChild(removeButton);
 
 
         let readButton = document.createElement("button");
+        readButton.classList.add("read-button");
         readButton.textContent = "read";
 
         readButton.addEventListener("click", () => {
@@ -81,7 +87,7 @@ function showTheBook(arr) {
             }
         })
 
-        books.appendChild(readButton);
+        buttonContainer.appendChild(readButton);
     }
 }
 
