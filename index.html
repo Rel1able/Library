@@ -27,18 +27,18 @@
 
     <form id="add-book" style="display: none;">
         <div class="container">
-            <label for="name">Enter the book name</label>
-            <input id="name" type="text" placeholder="The Adventures of Sherlock Holmes">
+            <label for="name" minlength="1">Enter the book name</label>
+            <input id="name" type="text" required placeholder="The Adventures of Sherlock Holmes">
             <label for="author">Enter the Author</label>
-            <input id="author" type="text" placeholder="Arthur Conan Doyle">
+            <input id="author" type="text"  required placeholder="Arthur Conan Doyle">
             <label for="pages">Enter the number of pages</label>
-            <input id="pages" type="number" placeholder="307">
+            <input id="pages" type="number" required placeholder="307">
             <div class="check-read">
                 <label for="read">read</label>
-                <input type="checkbox" id="read">
+                <input type="checkbox"  id="read">
             </div>
 
-            <button class="btn-add" type="button" required>Add the book</button>
+            <button class="btn-add">Add the book</button>
         </div>
 
     </form>

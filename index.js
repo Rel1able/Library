@@ -39,12 +39,12 @@ function showTheBook(arr) {
 
         const bookName = document.createElement("div");
         bookName.classList.add("book-name");
-        bookName.innerHTML = `<strong>Name:</strong> ${arr[i].name}`;
+        bookName.innerHTML = `<strong>Name:</strong>${arr[i].name}`;
         books.appendChild(bookName);
 
         const bookAuthor = document.createElement("div");
         bookAuthor.classList.add("book-author");
-        bookAuthor.innerHTML = `<strong>Author:</strong> ${arr[i].author}`;
+        bookAuthor.innerHTML = `<strong>Author:</strong> ${ arr[i].author }`;
         books.appendChild(bookAuthor);
 
         const bookPages = document.createElement("div");
@@ -96,17 +96,26 @@ showTheBook(myLibrary);
 
 function addBookToLibrary() {
     let addButton = document.querySelector(".btn-add");
-    addButton.addEventListener("click", () => {
+    addButton.addEventListener("click", (event) => {
+        const form = document.querySelector("form");
+
+        event.preventDefault(); 
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return
+        }
+
         let name = document.getElementById("name").value;
         let author = document.getElementById("author").value;
         let pages = document.getElementById("pages").value;
         let read = document.getElementById("read").checked;
 
 
-        if (!name || !author || !pages) {
+        /*if (!name || !author || !pages) {
             alert("Please fill out all required fields.")
             return;
-        }
+        }*/
 
         const newBook = new Book(name, author, pages, read);
 
@@ -122,6 +131,7 @@ function addBookToLibrary() {
 
 }
 addBookToLibrary();
+
 
 function showCard() {
     document.getElementById("add-book").style.display = "block";
